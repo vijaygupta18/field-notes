@@ -9,6 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://portfolio-ai.vijay-gupta-932.workers.dev" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Caveat:wght@400;500;600;700&family=Special+Elite&family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Shadows+Into+Light+Two&family=Homemade+Apple&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
@@ -49,6 +50,61 @@
     <div class="rmodal-body">
       <iframe src="assets/resume.pdf#zoom=page-width&view=FitH" title="Vijay Gupta resume PDF" loading="lazy"></iframe>
     </div>
+  </div>
+</div>
+
+<!-- ─────────────────  CONTACT MODAL (email popup)  ───────────────── -->
+<div id="contactModal" class="cmodal" hidden aria-hidden="true" role="dialog" aria-label="Send Vijay a message">
+  <div class="cmodal-backdrop" data-close></div>
+  <div class="cmodal-panel">
+    <div class="cmodal-tape" aria-hidden="true"></div>
+
+    <header class="cmodal-head">
+      <div class="cmodal-head-left">
+        <span class="cmodal-kicker">~ a message, torn out and sent ~</span>
+        <h3 class="cmodal-title">Let&apos;s talk.</h3>
+      </div>
+      <button type="button" class="cmodal-close" data-close aria-label="Close">
+        <span>esc</span>
+        <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M4 4 L16 16 M16 4 L4 16" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      </button>
+    </header>
+
+    <form id="contactForm" class="cmodal-form" novalidate>
+      <!-- honeypot -->
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="cmodal-hp" />
+
+      <div class="cmodal-row">
+        <label class="cmodal-field">
+          <span class="cmodal-label">your name</span>
+          <input type="text" name="name" required autocomplete="name" placeholder="who this is from" />
+        </label>
+        <label class="cmodal-field">
+          <span class="cmodal-label">your email</span>
+          <input type="email" name="email" required autocomplete="email" placeholder="so i can reply" />
+        </label>
+      </div>
+
+      <label class="cmodal-field">
+        <span class="cmodal-label">subject</span>
+        <input type="text" name="subject" placeholder="one line on what this is about" />
+      </label>
+
+      <label class="cmodal-field cmodal-field--msg">
+        <span class="cmodal-label">message</span>
+        <textarea name="message" rows="5" required placeholder="write your note here&hellip;"></textarea>
+      </label>
+
+      <div class="cmodal-actions">
+        <button type="submit" class="cmodal-send">
+          <span>Send it</span>
+          <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <a class="cmodal-mailto" href="mailto:vijayrauniyar1818@gmail.com">or mail me directly &nbsp;↗</a>
+      </div>
+
+      <p class="cmodal-status" id="cmodalStatus" aria-live="polite"></p>
+    </form>
   </div>
 </div>
 
@@ -156,13 +212,13 @@
             </svg>
             open résumé
           </button>
-          <a class="hero-cta" href="mailto:vijayrauniyar1818@gmail.com">
+          <button type="button" class="hero-cta" data-email>
             <svg viewBox="0 0 22 18" width="15" height="13" aria-hidden="true">
               <rect x="2" y="3" width="18" height="12" fill="none" stroke="currentColor" stroke-width="1.5" rx="1"/>
               <path d="M3 4 L11 11 L19 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
             email me
-          </a>
+          </button>
           <a class="hero-cta hero-cta--ghost" href="#whoami">
             start reading
             <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true">
@@ -1235,7 +1291,7 @@
         <ul class="reach-list">
           <li>
             <span class="reach-k">email</span>
-            <a class="reach-v" href="mailto:vijayrauniyar1818@gmail.com">vijayrauniyar1818@gmail.com</a>
+            <a class="reach-v" href="mailto:vijayrauniyar1818@gmail.com" data-email>vijayrauniyar1818@gmail.com</a>
           </li>
           <li>
             <span class="reach-k">linkedin</span>

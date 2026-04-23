@@ -238,7 +238,131 @@
   }
 
 
-  // ── 9. easter egg — type 'vg' to dim the desk lamp ────────────
+  // ── 9. contact (email) modal ─────────────────────────────────
+  const cmodal  = document.getElementById('contactModal');
+  const cform   = document.getElementById('contactForm');
+  const cstatus = document.getElementById('cmodalStatus');
+
+  if (cmodal && cform) {
+    const CONTACT_ENDPOINT = 'https://portfolio-ai.vijay-gupta-932.workers.dev/contact';
+    let lastFocusC = null;
+    let submitting = false;
+    let lastSent   = 0;
+
+    const clean   = (s) => String(s || '').replace(/<[^>]*>/g, '').slice(0, 4000).trim();
+    const isEmail = (s) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
+
+    const showStatus = (msg, ok = true) => {
+      if (!cstatus) return;
+      cstatus.textContent = msg;
+      cstatus.classList.toggle('is-error', !ok);
+      cstatus.classList.toggle('is-ok', ok);
+    };
+
+    function openContact() {
+      lastFocusC = document.activeElement;
+      cmodal.hidden = false;
+      cmodal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      showStatus('', true);
+      const first = cform.querySelector('input[name="name"]');
+      if (first) first.focus();
+    }
+    function closeContact() {
+      cmodal.hidden = true;
+      cmodal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lastFocusC && typeof lastFocusC.focus === 'function') lastFocusC.focus();
+    }
+
+    document.querySelectorAll('[data-email]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        // cmd/ctrl/shift/middle-click still opens mailto: in a new tab
+        if (e.metaKey || e.ctrlKey || e.button === 1 || e.shiftKey) return;
+        e.preventDefault();
+        openContact();
+      });
+    });
+
+    cmodal.querySelectorAll('[data-close]').forEach(el => {
+      el.addEventListener('click', closeContact);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !cmodal.hidden) closeContact();
+    });
+
+    // light focus trap
+    cmodal.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab') return;
+      const focusables = cmodal.querySelectorAll(
+        'input:not([type="hidden"]):not([tabindex="-1"]), textarea, a[href], button, [tabindex]:not([tabindex="-1"])'
+      );
+      if (!focusables.length) return;
+      const first = focusables[0], last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) { last.focus(); e.preventDefault(); }
+      else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
+    });
+
+    cform.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (submitting) return;
+      if (Date.now() - lastSent < 10000) {
+        showStatus('Please wait a few seconds before sending again.', false);
+        return;
+      }
+
+      const name    = clean(cform.name.value);
+      const email   = clean(cform.email.value);
+      const subject = clean(cform.subject.value) || 'Portfolio contact';
+      const message = clean(cform.message.value);
+      const website = cform.website ? cform.website.value : ''; // honeypot
+
+      if (name.length < 2)     { showStatus('Please enter your name.', false); return; }
+      if (!isEmail(email))     { showStatus('Please enter a valid email so I can reply.', false); return; }
+      if (message.length < 10) { showStatus('Please add a bit more context — at least 10 characters.', false); return; }
+
+      const btn  = cform.querySelector('button[type="submit"]');
+      const orig = btn.innerHTML;
+      submitting = true;
+      btn.disabled = true;
+      btn.innerHTML = '<span>Sending…</span>';
+      showStatus('Sending your note to Vijay…', true);
+
+      try {
+        const resp = await fetch(CONTACT_ENDPOINT, {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, subject, message, website })
+        });
+
+        let data = {};
+        try { data = await resp.json(); } catch (_) {}
+
+        if (!resp.ok) {
+          throw new Error(data.error || 'Send failed (' + resp.status + ')');
+        }
+
+        lastSent = Date.now();
+        cform.reset();
+        showStatus('Sent — thank you! I will get back to you soon.', true);
+        setTimeout(closeContact, 1800);
+      } catch (err) {
+        console.error('[contact] send failed:', err);
+        showStatus(
+          (err && err.message ? err.message : 'Send failed.') +
+          ' You can also email vijayrauniyar1818@gmail.com directly.',
+          false
+        );
+      } finally {
+        submitting = false;
+        btn.disabled = false;
+        btn.innerHTML = orig;
+      }
+    });
+  }
+
+
+  // ── 10. easter egg — type 'vg' to dim the desk lamp ───────────
   let buf = '';
   window.addEventListener('keydown', (e) => {
     if (/^[a-z]$/i.test(e.key)) {
