@@ -111,10 +111,10 @@
         </p>
 
         <p class="hero-card-pitch">
-          i scaled <b>Namma Yatri&apos;s</b> backend from <b>5K to 300K+ rides a day</b>
-          on haskell &middot; redis &middot; kafka, helped run it active-active across
-          aws + gcp, and pulled <b>$126K/yr</b> out of the aws bill while holding
-          <b>99.9%</b> uptime.
+          I scaled <b>Namma Yatri&apos;s</b> backend from <b>5K to 300K+ rides a day</b>
+          on Haskell, Redis, and Kafka. I helped run it active-active across
+          AWS and GCP, and led the cost work that removed <b>$126K a year</b> from
+          our AWS bill &mdash; all while holding <b>99.9%</b> uptime.
         </p>
 
         <ul class="hero-card-stats" aria-label="Key numbers">
@@ -210,10 +210,10 @@
           </div>
 
           <p class="exlibris-note">
-            if this book ends up somewhere it shouldn't — give me a shout.
-            there's some pretty personal reading in here.
+            If this notebook has reached you by accident, please drop me a note.
+            There is some reasonably personal reading inside.
           </p>
-          <p class="exlibris-sign">— vg</p>
+          <p class="exlibris-sign">&mdash; VG</p>
         </div>
       </div>
 
@@ -235,8 +235,8 @@
           </ul>
 
           <p class="toc-footnote">
-            * page numbers are lies. the notebook doesn&apos;t really have 260 pages.
-            i just liked how it looked.
+            * The page numbers are for flavour &mdash; this notebook does not actually
+            have 260 pages. They simply looked right.
           </p>
         </div>
       </div>
@@ -258,31 +258,34 @@
         <h2 class="entry-title entry-title--sharpie">so, who am i.</h2>
 
         <p class="prose prose--first">
-          <span class="dropcap">I</span> build <i>backends</i> &mdash; the kind that can wake you up at 3&nbsp;am. been doing it
-          for four years, currently as <b>SDE 2 at Namma Yatri</b>, on a team that
-          grew its daily load <u>sixty times over</u> in two years and kept the
-          pager mostly quiet. my title says <q>SDE 2</q>; in practice it&apos;s
-          part feature work, part distributed systems, part infrastructure,
-          and a <i>lot</i> of staring at graphs at 2 in the morning.
+          <span class="dropcap">I</span> build <i>backends</i> &mdash; the kind that can wake you up at 3&nbsp;AM.
+          I have been doing this for four years, and I am currently
+          <b>SDE 2 at Namma Yatri</b>, part of a small team that grew the platform&apos;s
+          daily load <u>sixty times over</u> in two years while keeping the pager
+          mostly quiet. My title says <q>SDE 2</q>, but in practice the work is part
+          feature engineering, part distributed systems, part infrastructure, and a
+          <i>lot</i> of staring at Grafana graphs at 2 in the morning.
         </p>
 
         <p class="prose">
-          i grew up on python, fell sideways into <em>haskell</em> at juspay in 2023,
-          and now that&apos;s what most of namma yatri is written in. i like languages
-          that make it hard to do the wrong thing &mdash; haskell, rust, the good parts
-          of typescript &mdash; and i like the parts of the stack everyone else calls
-          <q>boring</q>: redis, kafka, postgres, the zone-aware plumbing under it.
+          I grew up writing Python, discovered <em>Haskell</em> at Juspay in 2023, and
+          today most of Namma Yatri is written in it. I prefer languages that make
+          it hard to do the wrong thing &mdash; Haskell, Rust, and the good parts of
+          TypeScript &mdash; and I enjoy the parts of the stack that most people call
+          <q>boring</q>: Redis, Kafka, Postgres, and the zone-aware plumbing
+          underneath them.
         </p>
 
         <p class="prose">
-          i care most about <b>cost</b>, <b>latency</b>, and <b>the on-call page not firing</b>.
-          in that order. the rest of this notebook is roughly that: features i shipped,
-          systems i helped build, infra i helped tame. plus a few side projects
-          that kept me sane between incidents.
+          I care most about three things, in this order: <b>cost</b>, <b>latency</b>,
+          and <b>the on-call page not firing</b>. The rest of this notebook is
+          essentially a record of that work &mdash; features I have shipped, systems I
+          have helped build, and infrastructure I have helped tame. There are also
+          a few side projects that kept me sane between incidents.
         </p>
 
         <p class="prose prose--sign">
-          &mdash; v.
+          &mdash; V.
         </p>
       </div>
 
@@ -331,10 +334,11 @@
         <h2 class="entry-title entry-title--sharpie">numbers i&apos;m proud of.</h2>
 
         <p class="prose prose--tight">
-          in no particular order, and with honest caveats. every number here is
-          measured off real production graphs, not napkin math. if a number&apos;s
-          fuzzy i&apos;ve said so. an asterisk means <q>this was a team&apos;s win and
-          i had a real hand in it</q>, not <q>i did this alone</q>.
+          A short list, in no particular order, and with honest caveats. Every number
+          here is measured off real production graphs, not back-of-envelope estimates.
+          Where a number is approximate, I have said so. An asterisk means <q>this
+          was a team win in which I played a meaningful part</q> &mdash; not <q>I did
+          this alone</q>.
         </p>
       </div>
 
@@ -342,8 +346,8 @@
         <div class="stat-big">300k+</div>
         <div class="stat-unit">rides / day</div>
         <div class="stat-desc">
-          scaled from <b>5k</b> when i joined. roughly a <u>60×</u> jump.
-          same team, mostly the same hardware, rewritten hot paths.
+          Scaled up from <b>5K</b> when I joined &mdash; roughly a <u>60&times;</u>
+          jump. Same team, mostly the same hardware, with the hot paths rewritten.
         </div>
         <div class="stat-annot">
           <svg viewBox="0 0 90 40" width="90" height="40" aria-hidden="true">
@@ -358,8 +362,9 @@
         <div class="stat-big stat-big--green">$126k</div>
         <div class="stat-unit">/ year · aws savings</div>
         <div class="stat-desc">
-          ec2 right-sizing, az-aware redis/valkey routing, alb compression,
-          storage cleanup. about <u>20%</u> of our bill.
+          Through EC2 right-sizing, AZ-aware Redis and Valkey routing,
+          ALB compression, and storage clean-up &mdash; about <u>20%</u> of the
+          annual bill.
         </div>
         <div class="stat-highlight"></div>
       </div>
@@ -368,8 +373,8 @@
         <div class="stat-big">↓45%</div>
         <div class="stat-unit">p95 api latency</div>
         <div class="stat-desc">
-          profiled the hot paths, killed the blocking i/o, added connection pooling
-          to the worst offenders. boring stuff, real wins.
+          Profiled the hot paths, removed blocking I/O, and added connection
+          pooling on the worst offenders. Unglamorous work, with real gains.
         </div>
       </div>
 
@@ -377,8 +382,8 @@
         <div class="stat-big">99.9%</div>
         <div class="stat-unit">availability · on-call</div>
         <div class="stat-desc">
-          <u>75%</u> fewer 5xx, half the 3&nbsp;am pages. i still miss a weekend
-          occasionally, so this isn&apos;t bragging.
+          <u>75%</u> fewer 5xx errors and roughly half the 3 AM pages, sustained
+          under on-call ownership across the core services.
         </div>
       </div>
 
@@ -386,8 +391,9 @@
         <div class="stat-big">↓50%</div>
         <div class="stat-unit">redis memory</div>
         <div class="stat-desc">
-          zone-aware replica selection, zstd compression, table-level sharding.
-          cost dropped another <u>40%</u> on the redis line item alone.
+          Achieved through zone-aware replica selection, zstd compression, and
+          table-level sharding. Cost on the Redis line item alone dropped a
+          further <u>40%</u>.
         </div>
       </div>
 
@@ -395,8 +401,9 @@
         <div class="stat-big">↓70%</div>
         <div class="stat-unit">incident rca time</div>
         <div class="stat-desc">
-          via <b>vishwakarma</b> &mdash; the agent i wrote that runs 16 parallel
-          investigations across prom/k8s/es/dbs and drops the pdf into slack.
+          Delivered through <b>Vishwakarma</b>, an autonomous SRE agent I built
+          that runs 16 parallel investigations across Prometheus, Kubernetes,
+          Elasticsearch, and the databases, and posts a PDF RCA into Slack.
         </div>
       </div>
 
@@ -427,62 +434,63 @@
         </h2>
 
         <p class="prose">
-          <b>march 2024.</b> namma yatri spun out of juspay and i stayed with it.
-          on day one we were doing <u>roughly five thousand rides a day</u> across
-          bengaluru, and the backend was a small, stubborn thing written in haskell.
-          today, as <b>SDE 2</b>, i help run a platform that does
-          <u>three hundred thousand+</u> rides across multiple cities on the same
-          haskell core &mdash; but approximately nothing else about it is the same.
+          <b>March 2024.</b> Namma Yatri spun out of Juspay and I stayed on with
+          the team. On day one we were doing roughly <u>five thousand rides a day</u>
+          across Bengaluru, and the backend was a small, stubborn service written in
+          Haskell. Today, as <b>SDE 2</b>, I help run a platform that serves
+          <u>three hundred thousand+ rides a day</u> across multiple cities on the
+          same Haskell core &mdash; but almost nothing else about it is the same.
         </p>
 
         <p class="prose">
-          my job has been, in plain english, <em>to keep it from falling over while
-          it grows</em>. that breaks into three piles.
+          In plain English, my job has been to keep the platform from falling over
+          as it grows. The work falls into three parts.
         </p>
 
         <h3 class="subhead subhead--a">the features users actually touch</h3>
         <p class="prose">
-          i designed the <b>multimodal journey planner</b> &mdash; the thing that
-          lets a user type <q>majestic to whitefield</q> and get <i>autos + metro +
-          bus</i> stitched together with honest etas and traffic-aware routing.
-          it ships in three cities now. i also wrote chunks of the
-          <b>real-time dynamic pricing engine</b>: the one that decides what an
-          auto ride should cost right this second, given demand, rain, and the
-          mood of the corridor.
+          I designed the <b>multimodal journey planner</b> &mdash; the feature that
+          lets a user type <q>Majestic to Whitefield</q> and receive a stitched
+          itinerary across <i>autos, metro, and bus</i> with honest ETAs and
+          traffic-aware routing. It now ships in three cities. I also built large
+          parts of the <b>real-time dynamic pricing engine</b>, which decides what
+          an auto ride should cost at any given moment, based on demand, weather,
+          and the live conditions on a corridor.
         </p>
 
         <h3 class="subhead subhead--b">the systems behind them</h3>
         <p class="prose">
-          the <b>redis / valkey kv framework</b> is the piece i&apos;m proudest of.
-          it takes our real-time state &mdash; drivers, rides, prices &mdash; and
-          keeps it in a redis-shaped structure that looks like our postgres.
-          we run it at <u>5&nbsp;million+ transactions/day</u> and
-          <u>5k+ events/sec</u> with table-level sharding, async ops, pipelining,
-          and the kind of autoscaling that doesn&apos;t make you nervous.
-          on top of that i wrote an <b>in-memory gtfs service</b> with
-          graphql preloading &mdash; hot-path read latency went down
-          <u>60%</u> at ~5k req/sec.
+          The <b>Redis / Valkey KV framework</b> is the piece I am proudest of.
+          It takes our real-time state &mdash; drivers, rides, prices &mdash; and
+          stores it in a Redis-shaped structure that mirrors our Postgres schema.
+          We run it at <u>5 million+ transactions a day</u> and
+          <u>5,000+ events per second</u>, using table-level sharding, asynchronous
+          operations, pipelining, and autoscaling that does not make you nervous.
+          On top of that, I wrote an <b>in-memory GTFS service</b> with GraphQL
+          preloading that reduced hot-path read latency by <u>60%</u> at
+          approximately 5,000 requests per second.
         </p>
 
         <h3 class="subhead subhead--c">the infra nobody sees</h3>
         <p class="prose">
-          the platform now runs <b>active-active on aws&nbsp;+&nbsp;gcp</b>.
-          cross-cloud redis and kafka routing, client-aware dispatch,
-          zero-downtime cross-cloud deploys. i led the
-          <b>redis &rarr; valkey migration</b> (memory&nbsp;↓50%, cost&nbsp;↓40%),
-          the <b>kyverno pod-zone injection</b> that finally fixed our
-          cross-az bill, and the cost-work that quietly shaved
-          <u>$126k/year</u> off aws. i own on-call for the core and we&apos;ve
-          held <u>99.9% availability</u> while the platform has 60×&apos;d.
+          The platform now runs <b>active-active on AWS and GCP</b>, with
+          cross-cloud Redis and Kafka routing, client-aware dispatch, and
+          zero-downtime cross-cloud deploys. I led the
+          <b>Redis &rarr; Valkey migration</b> (memory down <u>50%</u>, cost
+          down <u>40%</u>), the <b>Kyverno pod-zone injection</b> that finally
+          fixed our cross-AZ bill, and the cost work that quietly saved
+          <u>$126K a year</u> on AWS. I own on-call for the core, and we have
+          held <u>99.9%</u> availability while the platform grew sixty times over.
         </p>
 
         <h3 class="subhead subhead--d">the tools i built on the side</h3>
         <p class="prose">
-          <b>vishwakarma</b> (p. 70) &mdash; autonomous sre agent. 16 parallel
-          investigations per alert, an rca pdf in slack before you&apos;ve finished
-          your tea. 70% less investigation time.<br/>
-          <b>ART</b> &mdash; automated regression testing by replaying real
-          production traffic. no more <q>it worked in staging</q>.
+          <b>Vishwakarma</b> (p. 70) is an autonomous SRE agent. It runs sixteen
+          parallel investigations for every alert and delivers an RCA PDF into
+          Slack within a few minutes &mdash; cutting investigation time by 70%.
+          <b>ART</b> (Automated Regression Testing) replays real production
+          traffic against candidate builds, so we catch API regressions before
+          a deploy, not after.
         </p>
       </div>
 
@@ -553,33 +561,34 @@
         <h2 class="entry-title entry-title--sharpie">juspay &mdash; the kv years.</h2>
 
         <p class="prose">
-          <b>april 2023.</b> i joined juspay as an SDE on what would become
-          namma yatri. the stack was haskell and a lot of redis. this was
-          where i got serious about types, and about treating the database
-          as a system to be designed rather than a service to be called.
+          <b>April 2023.</b> I joined Juspay as an SDE on what would later become
+          Namma Yatri. The stack was Haskell and a lot of Redis. This was where I
+          got serious about types, and about treating the database as a system to
+          be designed rather than a service to be called.
         </p>
 
         <p class="prose">
-          two headline projects from the year.
+          Two headline projects from that year:
         </p>
 
-        <h3 class="subhead subhead--a">KV &mdash; a redis front for postgres.</h3>
+        <h3 class="subhead subhead--a">KV &mdash; a Redis front for Postgres.</h3>
         <p class="prose">
-          we were paying too much for postgres reads on things that barely
-          needed to be strongly consistent. <b>KV</b> is a framework that keeps
-          real-time rows in redis, in a shape that looks like the table, and
-          keeps them in sync via a drainer. it took our db spend down
-          <u>40%</u> while making reads faster. later at namma yatri it would
-          scale to <u>5m+ daily transactions</u>.
+          We were paying too much for Postgres reads on data that did not really
+          need to be strongly consistent. <b>KV</b> is a framework that keeps
+          real-time rows in Redis, in a structure that mirrors the underlying
+          table, and keeps them in sync through a drainer service. It reduced our
+          database spend by <u>40%</u> while making reads noticeably faster. It
+          later scaled, at Namma Yatri, to <u>5 million+ daily transactions</u>.
         </p>
 
         <h3 class="subhead subhead--b">the drainer service.</h3>
         <p class="prose">
-          originally, the drainer lived inside the app &mdash; which meant a deploy
-          of the app was also a deploy of the drainer, and a mistake in one hurt
-          the other. i split it out. cleaner flow from redis streams &rarr; db,
-          and kafka &rarr; clickhouse directly for analytics. shaped data at the
-          edge instead of at the app. deploys got a lot less scary.
+          Originally, the drainer lived inside the application &mdash; which meant
+          that a deploy of the app was also a deploy of the drainer, and a mistake
+          in one could affect the other. I split the drainer out into its own
+          service. Data now flows cleanly from Redis Streams into Postgres, and
+          directly from Kafka into ClickHouse for analytics. With data being shaped
+          at the edge rather than inside the app, deploys became far less risky.
         </p>
       </div>
 
@@ -652,40 +661,40 @@
         <h2 class="entry-title entry-title--sharpie">vahan &mdash; the first job.</h2>
 
         <p class="prose">
-          <b>june 2022.</b> my first full-time role. my slice of the product was
-          the backend for an <b>ai-driven whatsapp bot</b> that matches
-          blue-collar workers to jobs at zomato, swiggy, zepto, and uber.
-          the kind of thing where every ten milliseconds you shave matters,
-          because there&apos;s a real person on the other side waiting for a
-          reply.
+          <b>June 2022.</b> My first full-time role. My slice of the product was
+          the backend for an <b>AI-driven WhatsApp bot</b> that matched blue-collar
+          workers to jobs at Zomato, Swiggy, Zepto, and Uber. It was the kind of
+          workload where every ten milliseconds you shave matters, because there is
+          a real person on the other side waiting for a reply.
         </p>
 
         <p class="prose">
-          what i shipped:
+          What I shipped:
         </p>
 
         <ol class="prose prose--list">
           <li>
-            made the bot process chats <b>concurrently</b> &mdash; rabbitmq
-            fanout with per-user handlers. api response time dropped
-            <u>~45%</u>, engagement climbed <u>~35%</u>, telecalling costs
-            fell <u>~32%</u>, and we handled <u>10k+ conversations</u> on the
-            new pipeline.
+            Redesigned the bot to process chats <b>concurrently</b>, using a
+            RabbitMQ fan-out with per-user handlers. API response time dropped
+            by about <u>45%</u>, engagement rose by about <u>35%</u>, telecalling
+            costs fell by roughly <u>32%</u>, and we handled over
+            <u>10,000 conversations</u> on the new pipeline.
           </li>
           <li>
-            wrote a data-warehouse integration to track application status
-            automatically &mdash; <u>~70%</u> less manual monitoring effort
-            for the ops team.
+            Built a data-warehouse integration that tracks application status
+            automatically &mdash; reducing manual monitoring effort for the
+            operations team by around <u>70%</u>.
           </li>
           <li>
-            helped build the backend for an ai matching flow that quietly
+            Contributed to the backend for an AI matching flow that quietly
             served <u>100,000+ job seekers</u>.
           </li>
         </ol>
 
         <p class="prose">
-          good year. i learned how a real product hits a real load, and how
-          different that is from a course assignment where nobody&apos;s waiting.
+          It was a good year. I learnt how a real product behaves under a real load,
+          and how different that is from a classroom assignment, where no one is
+          waiting for your response.
         </p>
       </div>
 
@@ -722,9 +731,9 @@
         <span class="entry-stamp">entry 06</span>
         <h2 class="entry-title entry-title--sharpie">things i made on weekends.</h2>
         <p class="prose prose--tight">
-          work is one thing. the best way i know to actually learn something is
-          to make a small, slightly embarrassing version of it on a sunday. pinned
-          below: the ones i&apos;d actually show someone.
+          Work is one thing. The best way I know to actually learn something is to
+          build a small, slightly embarrassing version of it over a weekend. Pinned
+          below are the projects I am happy to show someone.
         </p>
       </div>
 
@@ -762,9 +771,10 @@
         </svg>
         <h3 class="build-name">vishwakarma</h3>
         <p class="build-desc">
-          autonomous sre agent. you page, it investigates, it drops a full rca
-          pdf in slack. fans out across prom · k8s · es · dbs.
-          <b>↓70%</b> investigation time.
+          An autonomous SRE agent. When you receive a page, it starts investigating,
+          fanning out across Prometheus, Kubernetes, Elasticsearch, and the
+          databases, and posts a full RCA PDF into Slack.
+          <b>Investigation time down 70%.</b>
         </p>
         <a class="build-link" href="https://github.com/vijaygupta18/Vishwakarma" target="_blank" rel="noopener">github ↗</a>
       </article>
@@ -785,9 +795,9 @@
         </svg>
         <h3 class="build-name">system design simulator <span class="build-star">★ 174</span></h3>
         <p class="build-desc">
-          drag-and-drop interview practice. 30 components with real benchmarks
-          (lb: 1m qps, cache: 100k qps), 35 design problems, traffic sim with
-          bottleneck detection.
+          A drag-and-drop system-design practice environment. 30 components with
+          real benchmarks (load balancer: 1M QPS, cache: 100K QPS), 35 design
+          problems, and a traffic simulator with bottleneck detection.
         </p>
         <a class="build-link" href="https://github.com/vijaygupta18/system-design-simulator" target="_blank" rel="noopener">github ↗</a>
       </article>
@@ -815,8 +825,9 @@
         </svg>
         <h3 class="build-name">ai interview platform</h3>
         <p class="build-desc">
-          voice + video interview flow w/ deepgram stt/tts, real-time proctoring,
-          auto-scoring. multi-tenant, works with any openai-compatible api.
+          A voice and video interview flow using Deepgram for STT and TTS, with
+          real-time proctoring and automated scoring. Multi-tenant, and works with
+          any OpenAI-compatible API.
         </p>
         <a class="build-link" href="https://github.com/vijaygupta18/ai-interview-platform" target="_blank" rel="noopener">github ↗</a>
       </article>
@@ -835,9 +846,9 @@
         </svg>
         <h3 class="build-name">multi-cloud db manager</h3>
         <p class="build-desc">
-          one pane to query pg &amp; redis across aws and gcp at the same time.
-          parallel execution, side-by-side diff, 3-tier rbac, monaco editor,
-          password-gated destructive ops.
+          A single console that queries Postgres and Redis across AWS and GCP at
+          the same time. Parallel execution, side-by-side diff, three-tier RBAC,
+          a Monaco editor, and password-gated destructive operations.
         </p>
         <a class="build-link" href="https://github.com/vijaygupta18/Multi-Cloud-DB-Manager" target="_blank" rel="noopener">github ↗</a>
       </article>
@@ -857,9 +868,10 @@
         </svg>
         <h3 class="build-name">argus</h3>
         <p class="build-desc">
-          slack-native incident platform. mention @argus, it triages, pulls on-call
-          by availability, streams llm-powered rca into a dashboard. rbac + audit
-          trail + stale-ticket nags.
+          A Slack-native incident platform. Mention <b>@argus</b> and it triages the
+          issue, assigns on-call by availability, and streams an LLM-powered RCA
+          into a dashboard. Includes RBAC, audit trail, and reminders for stale
+          tickets.
         </p>
         <a class="build-link" href="https://github.com/vijaygupta18/argus" target="_blank" rel="noopener">github ↗</a>
       </article>
@@ -874,9 +886,10 @@
         </svg>
         <h3 class="build-name">nodesage</h3>
         <p class="build-desc">
-          cli: query any codebase with local llms (ollama) + rag. ask a repo
-          anything, nothing leaves your machine. good for when you&apos;re new to
-          a monorepo and embarrassed to ask a human.
+          A CLI that lets you query any codebase using local LLMs (Ollama) with
+          RAG. Ask a repository anything &mdash; nothing leaves your machine.
+          Especially useful when you are new to a monorepo and would rather not
+          interrupt a teammate.
         </p>
         <a class="build-link" href="https://github.com/vijaygupta18/NodeSage" target="_blank" rel="noopener">github ↗</a>
       </article>
@@ -894,8 +907,9 @@
         </svg>
         <h3 class="build-name">k8s-dashboard</h3>
         <p class="build-desc">
-          real-time k8s cluster monitor &mdash; pod health, resources, events viewer.
-          fastapi + react, deploys on a single pod.
+          A real-time Kubernetes cluster monitor covering pod health, resource
+          usage, and an events viewer. Built with FastAPI and React, and deploys
+          on a single pod.
         </p>
         <a class="build-link" href="https://github.com/vijaygupta18/k8s-dashboard" target="_blank" rel="noopener">github ↗</a>
       </article>
@@ -914,8 +928,9 @@
         </svg>
         <h3 class="build-name">bus route tracker</h3>
         <p class="build-desc">
-          open-source, @nammayatri. crowd-sources bus-stop &amp; route data
-          with real-time gps and an admin api for corrections.
+          An open-source project under <b>@nammayatri</b>. It crowd-sources bus-stop
+          and route data using real-time GPS, and provides an admin API for
+          corrections.
         </p>
         <a class="build-link" href="https://github.com/nammayatri/bus-route-tracker" target="_blank" rel="noopener">github ↗</a>
       </article>
@@ -938,9 +953,10 @@
         <span class="entry-stamp">entry 07</span>
         <h2 class="entry-title entry-title--sharpie">what&apos;s in my toolbox.</h2>
         <p class="prose prose--tight">
-          mind-mapped first. then listed properly below, because the chip-grid
-          version is honest. <b>★</b> = deepest experience. <b>·</b> = shipped with,
-          happy to pick up again. <b>~</b> = around the edges but familiar.
+          Sketched first as a mind-map, then listed in full below, because the
+          structured list is more honest. <b>★</b> means deepest experience.
+          <b>·</b> means I have shipped with it and would happily pick it up again.
+          <b>~</b> means I am familiar with it around the edges.
         </p>
       </div>
 
@@ -1103,9 +1119,9 @@
         </div>
 
         <p class="inv-foot">
-          <b>also on the bench</b> &middot; vs code, github actions, slack
-          bots, mermaid diagrams, and more <q>i&apos;ll read the docs this
-          weekend</q> than i&apos;d like to admit.
+          <b>Also on the bench:</b> VS Code, GitHub Actions, Slack bots, Mermaid
+          diagrams, and more <q>I will read the docs this weekend</q> than I care
+          to admit.
         </p>
       </section>
 
@@ -1137,8 +1153,9 @@
         <span class="entry-stamp">entry 08</span>
         <h2 class="entry-title entry-title--sharpie">letters people sent me.</h2>
         <p class="prose prose--tight">
-          these are from old managers and teammates on linkedin. i&apos;ve pasted
-          them in as-is. the messy handwriting is mine; the words aren&apos;t.
+          These are recommendations from former managers and teammates, originally
+          posted on LinkedIn. I have pasted them here as they were written. The
+          handwriting is mine; the words are not.
         </p>
       </div>
 
@@ -1202,11 +1219,12 @@
         <h2 class="entry-title entry-title--sharpie">how to find me.</h2>
 
         <p class="prose">
-          i&apos;m <b>actively interviewing</b> for senior <b>backend</b>, <b>fullstack</b>,
-          <b>ai</b>, <b>sre</b>, and <b>platform</b> roles &mdash; remote, relocation, or
-          bengaluru. if you&apos;ve got a weird distributed-systems problem, a team
-          that moves fast without lying about it, or just want to chat about
-          haskell or redis at 11&nbsp;pm, the addresses below all work.
+          I am <b>actively interviewing</b> for senior <b>Backend</b>, <b>Fullstack</b>,
+          <b>AI</b>, <b>SRE</b>, and <b>Platform</b> roles &mdash; remote, relocation,
+          or Bengaluru. If you have an interesting distributed-systems problem, a
+          team that moves quickly without cutting corners on quality, or you would
+          simply like to discuss Haskell or Redis over a call, any of the addresses
+          below will reach me.
         </p>
       </div>
 
