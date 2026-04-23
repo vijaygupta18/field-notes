@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vijay Gupta — Field Notes, Vol. 01</title>
+  <meta name="description" content="Field notes from four years in production. A handwritten notebook by Vijay Gupta — backend engineer, Bengaluru." />
+  <meta name="author" content="Vijay Gupta" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Caveat:wght@400;500;600;700&family=Special+Elite&family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Shadows+Into+Light+Two&family=Homemade+Apple&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ─────────────────  FLOATING RESUME BUTTON  ───────────────── -->
+<button id="resumeBtn" class="resume-fab" aria-label="Open resume" data-resume>
+  <span class="resume-fab-clip" aria-hidden="true"></span>
+  <svg viewBox="0 0 20 22" width="14" height="16" aria-hidden="true">
+    <path d="M3 2 h9 l5 5 v13 H3 z" fill="#fffcee" stroke="#142044" stroke-width="1.4"/>
+    <path d="M12 2 v5 h5" fill="none" stroke="#142044" stroke-width="1.4"/>
+    <line x1="5.8" y1="11" x2="14.2" y2="11" stroke="#142044" stroke-width="1.1"/>
+    <line x1="5.8" y1="14" x2="14.2" y2="14" stroke="#142044" stroke-width="1.1"/>
+    <line x1="5.8" y1="17" x2="11" y2="17" stroke="#142044" stroke-width="1.1"/>
+  </svg>
+  <span class="resume-fab-text">résumé<em>.pdf</em></span>
+</button>
+
+<!-- ─────────────────  RESUME MODAL  ───────────────── -->
+<div id="resumeModal" class="rmodal" hidden aria-hidden="true" role="dialog" aria-label="Vijay Gupta resume">
+  <div class="rmodal-backdrop" data-close></div>
+  <div class="rmodal-panel">
+    <div class="rmodal-tape" aria-hidden="true"></div>
+    <header class="rmodal-head">
+      <div class="rmodal-head-left">
+        <span class="rmodal-dot"></span>
+        <span class="rmodal-title">vijay_gupta_resume.pdf</span>
+      </div>
+      <div class="rmodal-head-right">
+        <a href="assets/resume.pdf" download class="rmodal-dl">download ↓</a>
+        <button type="button" class="rmodal-close" data-close aria-label="Close resume">
+          <span>esc</span>
+          <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M4 4 L16 16 M16 4 L4 16" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </header>
+    <div class="rmodal-body">
+      <iframe src="assets/resume.pdf#zoom=page-width&view=FitH" title="Vijay Gupta resume PDF" loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────  BOOKMARK TABS (right rail)  ───────────────── -->
+<nav class="bookmarks" aria-label="Jump to entry">
+  <a href="#cover" class="bm bm--1" data-label="cover">i.</a>
+  <a href="#inside" class="bm bm--2" data-label="contents">ii.</a>
+  <a href="#whoami" class="bm bm--3" data-label="who">01</a>
+  <a href="#numbers" class="bm bm--4" data-label="numbers">02</a>
+  <a href="#nammayatri" class="bm bm--5" data-label="nammayatri">03</a>
+  <a href="#juspay" class="bm bm--6" data-label="juspay">04</a>
+  <a href="#vahan" class="bm bm--7" data-label="vahan">05</a>
+  <a href="#builds" class="bm bm--8" data-label="builds">06</a>
+  <a href="#toolbox" class="bm bm--9" data-label="toolbox">07</a>
+  <a href="#letters" class="bm bm--10" data-label="letters">08</a>
+  <a href="#reach" class="bm bm--11" data-label="reach">09</a>
+</nav>
+
+<!-- desk surface under the notebook -->
+<div class="desk" aria-hidden="true"></div>
+
+<main class="book">
+
+  <!-- ─────────────────  COVER  ───────────────── -->
+  <section id="cover" class="page page--cover">
+    <div class="cover-canvas">
+      <div class="cover-band" aria-hidden="true"></div>
+
+      <div class="cover-title-wrap">
+        <span class="cover-kicker">a notebook, mostly</span>
+        <h1 class="cover-title">
+          <span>Field</span>
+          <span>Notes</span>
+        </h1>
+        <p class="cover-sub">four years in production</p>
+        <p class="cover-vol">Vol. 01 &nbsp;·&nbsp; 2022 — 2026</p>
+      </div>
+
+      <div class="cover-open-tag">
+        <span class="cover-open-dot"></span>
+        <span>currently open to work</span>
+      </div>
+
+      <!-- The recruiter-grade library card clipped to the cover -->
+      <aside class="hero-card" aria-label="About Vijay">
+        <span class="hero-card-tape hero-card-tape--tl" aria-hidden="true"></span>
+        <span class="hero-card-tape hero-card-tape--tr" aria-hidden="true"></span>
+
+        <header class="hero-card-head">
+          <span class="hero-card-eyebrow">
+            <span class="hero-card-live-dot"></span>
+            open &middot; senior backend / fullstack / ai / sre / platform
+          </span>
+          <span class="hero-card-stamp">No. 1998 &middot; BLR, IN</span>
+        </header>
+
+        <h2 class="hero-card-name">Vijay Gupta</h2>
+        <p class="hero-card-role">
+          sde 2 &middot; namma yatri &middot; 4 yrs &middot; <em>backend &amp; distributed systems</em>
+        </p>
+
+        <p class="hero-card-pitch">
+          i scaled <b>Namma Yatri&apos;s</b> backend from <b>5K to 300K+ rides a day</b>
+          on haskell &middot; redis &middot; kafka, helped run it active-active across
+          aws + gcp, and pulled <b>$126K/yr</b> out of the aws bill while holding
+          <b>99.9%</b> uptime.
+        </p>
+
+        <ul class="hero-card-stats" aria-label="Key numbers">
+          <li>
+            <span class="hcs-num">300k+</span>
+            <span class="hcs-lbl">rides / day <em>(60&times;)</em></span>
+          </li>
+          <li>
+            <span class="hcs-num hcs-num--g">$126k</span>
+            <span class="hcs-lbl">aws saved / yr</span>
+          </li>
+          <li>
+            <span class="hcs-num">99.9%</span>
+            <span class="hcs-lbl">availability</span>
+          </li>
+          <li>
+            <span class="hcs-num">↓45%</span>
+            <span class="hcs-lbl">p95 latency</span>
+          </li>
+        </ul>
+
+        <ul class="hero-card-chips" aria-label="Primary stack">
+          <li>haskell</li>
+          <li>redis / valkey</li>
+          <li>kafka</li>
+          <li>postgres</li>
+          <li>aws + gcp</li>
+          <li>kubernetes</li>
+        </ul>
+
+        <div class="hero-card-ctas">
+          <button type="button" class="hero-cta hero-cta--primary" data-resume>
+            <svg viewBox="0 0 20 22" width="14" height="15" aria-hidden="true">
+              <path d="M4 2 h9 l4 4 v14 H4 z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M13 2 v4 h4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="7" y1="11" x2="14" y2="11" stroke="currentColor" stroke-width="1.3"/>
+              <line x1="7" y1="14" x2="14" y2="14" stroke="currentColor" stroke-width="1.3"/>
+              <line x1="7" y1="17" x2="11" y2="17" stroke="currentColor" stroke-width="1.3"/>
+            </svg>
+            open résumé
+          </button>
+          <a class="hero-cta" href="mailto:vijayrauniyar1818@gmail.com">
+            <svg viewBox="0 0 22 18" width="15" height="13" aria-hidden="true">
+              <rect x="2" y="3" width="18" height="12" fill="none" stroke="currentColor" stroke-width="1.5" rx="1"/>
+              <path d="M3 4 L11 11 L19 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            email me
+          </a>
+          <a class="hero-cta hero-cta--ghost" href="#whoami">
+            start reading
+            <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true">
+              <path d="M4 10 L16 10 M10 4 L16 10 L10 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <footer class="hero-card-foot">
+          <a href="https://github.com/vijaygupta18" target="_blank" rel="noopener">github</a>
+          <span>&middot;</span>
+          <a href="https://linkedin.com/in/vijaygupta18" target="_blank" rel="noopener">linkedin</a>
+          <span>&middot;</span>
+          <a href="https://twitter.com/vijaygupta18" target="_blank" rel="noopener">x</a>
+          <span class="hero-card-foot-note">remote · relocation · bengaluru</span>
+        </footer>
+      </aside>
+
+      <div class="cover-scribble" aria-hidden="true">
+        if found, please return &mdash; or keep reading ↓
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─────────────────  INSIDE COVER / TOC  ───────────────── -->
+  <section id="inside" class="page page--inside">
+    <div class="page-body page-body--two">
+      <div class="inside-left">
+        <div class="exlibris">
+          <p class="exlibris-line">this notebook belongs to</p>
+          <h2 class="exlibris-name"><span>Vijay</span><span>Gupta</span></h2>
+          <div class="exlibris-under"></div>
+          <p class="exlibris-addr">
+            <span>bengaluru &middot; karnataka &middot; <em>in</em></span>
+            <span>mail &middot; <u>vijayrauniyar1818@gmail.com</u></span>
+            <span>web &middot; <u>vijaygupta18.github.io</u></span>
+            <span>git &middot; <u>github.com/vijaygupta18</u></span>
+          </p>
+
+          <div class="exlibris-stamp" aria-hidden="true">
+            <span>NO. <b>01</b></span>
+            <span>STARTED &middot; JUN 2022</span>
+            <span>OPEN &middot; APR 2026</span>
+          </div>
+
+          <p class="exlibris-note">
+            if this book ends up somewhere it shouldn't — give me a shout.
+            there's some pretty personal reading in here.
+          </p>
+          <p class="exlibris-sign">— vg</p>
+        </div>
+      </div>
+
+      <div class="inside-right">
+        <div class="toc">
+          <div class="toc-head">
+            <span>·  contents  ·</span>
+          </div>
+          <ul class="toc-list">
+            <li><a href="#whoami"><span class="toc-no">01</span><span class="toc-name">who i am, roughly</span><span class="toc-dots"></span><span class="toc-page">p. 04</span></a></li>
+            <li><a href="#numbers"><span class="toc-no">02</span><span class="toc-name">numbers i&nbsp;am proud of</span><span class="toc-dots"></span><span class="toc-page">p. 08</span></a></li>
+            <li><a href="#nammayatri"><span class="toc-no">03</span><span class="toc-name">namma yatri — <i>current</i></span><span class="toc-dots"></span><span class="toc-page">p. 12</span></a></li>
+            <li><a href="#juspay"><span class="toc-no">04</span><span class="toc-name">juspay — the kv years</span><span class="toc-dots"></span><span class="toc-page">p. 34</span></a></li>
+            <li><a href="#vahan"><span class="toc-no">05</span><span class="toc-name">vahan — the first job</span><span class="toc-dots"></span><span class="toc-page">p. 56</span></a></li>
+            <li><a href="#builds"><span class="toc-no">06</span><span class="toc-name">things i made on weekends</span><span class="toc-dots"></span><span class="toc-page">p. 70</span></a></li>
+            <li><a href="#toolbox"><span class="toc-no">07</span><span class="toc-name">what&apos;s in my toolbox</span><span class="toc-dots"></span><span class="toc-page">p. 102</span></a></li>
+            <li><a href="#letters"><span class="toc-no">08</span><span class="toc-name">letters people sent me</span><span class="toc-dots"></span><span class="toc-page">p. 118</span></a></li>
+            <li><a href="#reach"><span class="toc-no">09</span><span class="toc-name">how to find me</span><span class="toc-dots"></span><span class="toc-page">p. 260</span></a></li>
+          </ul>
+
+          <p class="toc-footnote">
+            * page numbers are lies. the notebook doesn&apos;t really have 260 pages.
+            i just liked how it looked.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─────────────────  01 · WHO I AM  ───────────────── -->
+  <section id="whoami" class="page page--ruled">
+    <div class="page-header">
+      <div class="page-header-date">entry &middot; <u>apr 2026</u> &middot; blr</div>
+      <div class="page-header-no">p. 04</div>
+    </div>
+
+    <div class="page-body page-body--whoami">
+
+      <div class="entry entry--whoami">
+        <span class="entry-stamp">entry 01</span>
+        <h2 class="entry-title entry-title--sharpie">so, who am i.</h2>
+
+        <p class="prose prose--first">
+          <span class="dropcap">I</span> build <i>backends</i> &mdash; the kind that can wake you up at 3&nbsp;am. been doing it
+          for four years, currently as <b>SDE 2 at Namma Yatri</b>, on a team that
+          grew its daily load <u>sixty times over</u> in two years and kept the
+          pager mostly quiet. my title says <q>SDE 2</q>; in practice it&apos;s
+          part feature work, part distributed systems, part infrastructure,
+          and a <i>lot</i> of staring at graphs at 2 in the morning.
+        </p>
+
+        <p class="prose">
+          i grew up on python, fell sideways into <em>haskell</em> at juspay in 2023,
+          and now that&apos;s what most of namma yatri is written in. i like languages
+          that make it hard to do the wrong thing &mdash; haskell, rust, the good parts
+          of typescript &mdash; and i like the parts of the stack everyone else calls
+          <q>boring</q>: redis, kafka, postgres, the zone-aware plumbing under it.
+        </p>
+
+        <p class="prose">
+          i care most about <b>cost</b>, <b>latency</b>, and <b>the on-call page not firing</b>.
+          in that order. the rest of this notebook is roughly that: features i shipped,
+          systems i helped build, infra i helped tame. plus a few side projects
+          that kept me sane between incidents.
+        </p>
+
+        <p class="prose prose--sign">
+          &mdash; v.
+        </p>
+      </div>
+
+      <aside class="polaroid polaroid--me">
+        <div class="polaroid-tape polaroid-tape--tl" aria-hidden="true"></div>
+        <div class="polaroid-tape polaroid-tape--br" aria-hidden="true"></div>
+        <img src="assets/profile.jpg" alt="Vijay Gupta, smiling." />
+        <span class="polaroid-caption">me, roughly. <br/><em>blr &middot; 2025</em></span>
+      </aside>
+
+      <aside class="postit postit--yellow postit--whoami">
+        <p>
+          <b>quick facts</b><br/>
+          · based &mdash; bengaluru<br/>
+          · role &mdash; sde 2 @ namma yatri<br/>
+          · since &mdash; mar 2024<br/>
+          · experience &mdash; 4 yrs, production<br/>
+          · open to &mdash; remote,<br/>
+          &nbsp;&nbsp;relocation, bengaluru
+        </p>
+      </aside>
+
+      <div class="margin-note margin-note--whoami">
+        <svg viewBox="0 0 80 60" width="70" height="52" aria-hidden="true">
+          <path d="M 70 5 Q 40 30, 10 50" fill="none" stroke="#c0392b" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M 18 46 l -8 6 l 10 -1 z" fill="#c0392b"/>
+        </svg>
+        <span>yes, that&apos;s me.</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ─────────────────  02 · NUMBERS  ───────────────── -->
+  <section id="numbers" class="page page--grid">
+    <div class="page-header">
+      <div class="page-header-date">entry &middot; <u>apr 2026</u></div>
+      <div class="page-header-no">p. 08</div>
+    </div>
+
+    <div class="page-body page-body--numbers">
+
+      <div class="entry entry--numbers">
+        <span class="entry-stamp">entry 02</span>
+        <h2 class="entry-title entry-title--sharpie">numbers i&apos;m proud of.</h2>
+
+        <p class="prose prose--tight">
+          in no particular order, and with honest caveats. every number here is
+          measured off real production graphs, not napkin math. if a number&apos;s
+          fuzzy i&apos;ve said so. an asterisk means <q>this was a team&apos;s win and
+          i had a real hand in it</q>, not <q>i did this alone</q>.
+        </p>
+      </div>
+
+      <div class="stat-card stat-card--a" style="--rot:-1.4deg">
+        <div class="stat-big">300k+</div>
+        <div class="stat-unit">rides / day</div>
+        <div class="stat-desc">
+          scaled from <b>5k</b> when i joined. roughly a <u>60×</u> jump.
+          same team, mostly the same hardware, rewritten hot paths.
+        </div>
+        <div class="stat-annot">
+          <svg viewBox="0 0 90 40" width="90" height="40" aria-hidden="true">
+            <path d="M 5 35 Q 20 30, 30 25 T 85 5" fill="none" stroke="#1b2a4e" stroke-width="1.6" stroke-linecap="round"/>
+            <circle cx="85" cy="5" r="2.4" fill="#1b2a4e"/>
+          </svg>
+          <span class="stat-annot-text">the nice curve</span>
+        </div>
+      </div>
+
+      <div class="stat-card stat-card--b" style="--rot:1.2deg">
+        <div class="stat-big stat-big--green">$126k</div>
+        <div class="stat-unit">/ year · aws savings</div>
+        <div class="stat-desc">
+          ec2 right-sizing, az-aware redis/valkey routing, alb compression,
+          storage cleanup. about <u>20%</u> of our bill.
+        </div>
+        <div class="stat-highlight"></div>
+      </div>
+
+      <div class="stat-card stat-card--c" style="--rot:-0.6deg">
+        <div class="stat-big">↓45%</div>
+        <div class="stat-unit">p95 api latency</div>
+        <div class="stat-desc">
+          profiled the hot paths, killed the blocking i/o, added connection pooling
+          to the worst offenders. boring stuff, real wins.
+        </div>
+      </div>
+
+      <div class="stat-card stat-card--d" style="--rot:1.6deg">
+        <div class="stat-big">99.9%</div>
+        <div class="stat-unit">availability · on-call</div>
+        <div class="stat-desc">
+          <u>75%</u> fewer 5xx, half the 3&nbsp;am pages. i still miss a weekend
+          occasionally, so this isn&apos;t bragging.
+        </div>
+      </div>
+
+      <div class="stat-card stat-card--e" style="--rot:-1deg">
+        <div class="stat-big">↓50%</div>
+        <div class="stat-unit">redis memory</div>
+        <div class="stat-desc">
+          zone-aware replica selection, zstd compression, table-level sharding.
+          cost dropped another <u>40%</u> on the redis line item alone.
+        </div>
+      </div>
+
+      <div class="stat-card stat-card--f" style="--rot:0.9deg">
+        <div class="stat-big">↓70%</div>
+        <div class="stat-unit">incident rca time</div>
+        <div class="stat-desc">
+          via <b>vishwakarma</b> &mdash; the agent i wrote that runs 16 parallel
+          investigations across prom/k8s/es/dbs and drops the pdf into slack.
+        </div>
+      </div>
+
+      <div class="margin-note margin-note--numbers">
+        <span class="margin-note-star">*</span>
+        <span>most of this is team&nbsp;work. i was load-bearing on all of it.</span>
+      </div>
+
+      <div class="coffee-ring coffee-ring--numbers" aria-hidden="true"></div>
+    </div>
+  </section>
+
+
+  <!-- ─────────────────  03 · NAMMA YATRI  ───────────────── -->
+  <section id="nammayatri" class="page page--ruled">
+    <div class="page-header">
+      <div class="page-header-date">entry &middot; <u>mar 2024 → now</u></div>
+      <div class="page-header-no">p. 12</div>
+    </div>
+
+    <div class="page-body page-body--ny">
+
+      <div class="entry entry--ny">
+        <span class="entry-stamp">entry 03 &middot; sde 2 &middot; current</span>
+        <h2 class="entry-title entry-title--sharpie">
+          namma yatri.
+          <span class="entry-subtag">(the long one)</span>
+        </h2>
+
+        <p class="prose">
+          <b>march 2024.</b> namma yatri spun out of juspay and i stayed with it.
+          on day one we were doing <u>roughly five thousand rides a day</u> across
+          bengaluru, and the backend was a small, stubborn thing written in haskell.
+          today, as <b>SDE 2</b>, i help run a platform that does
+          <u>three hundred thousand+</u> rides across multiple cities on the same
+          haskell core &mdash; but approximately nothing else about it is the same.
+        </p>
+
+        <p class="prose">
+          my job has been, in plain english, <em>to keep it from falling over while
+          it grows</em>. that breaks into three piles.
+        </p>
+
+        <h3 class="subhead subhead--a">the features users actually touch</h3>
+        <p class="prose">
+          i designed the <b>multimodal journey planner</b> &mdash; the thing that
+          lets a user type <q>majestic to whitefield</q> and get <i>autos + metro +
+          bus</i> stitched together with honest etas and traffic-aware routing.
+          it ships in three cities now. i also wrote chunks of the
+          <b>real-time dynamic pricing engine</b>: the one that decides what an
+          auto ride should cost right this second, given demand, rain, and the
+          mood of the corridor.
+        </p>
+
+        <h3 class="subhead subhead--b">the systems behind them</h3>
+        <p class="prose">
+          the <b>redis / valkey kv framework</b> is the piece i&apos;m proudest of.
+          it takes our real-time state &mdash; drivers, rides, prices &mdash; and
+          keeps it in a redis-shaped structure that looks like our postgres.
+          we run it at <u>5&nbsp;million+ transactions/day</u> and
+          <u>5k+ events/sec</u> with table-level sharding, async ops, pipelining,
+          and the kind of autoscaling that doesn&apos;t make you nervous.
+          on top of that i wrote an <b>in-memory gtfs service</b> with
+          graphql preloading &mdash; hot-path read latency went down
+          <u>60%</u> at ~5k req/sec.
+        </p>
+
+        <h3 class="subhead subhead--c">the infra nobody sees</h3>
+        <p class="prose">
+          the platform now runs <b>active-active on aws&nbsp;+&nbsp;gcp</b>.
+          cross-cloud redis and kafka routing, client-aware dispatch,
+          zero-downtime cross-cloud deploys. i led the
+          <b>redis &rarr; valkey migration</b> (memory&nbsp;↓50%, cost&nbsp;↓40%),
+          the <b>kyverno pod-zone injection</b> that finally fixed our
+          cross-az bill, and the cost-work that quietly shaved
+          <u>$126k/year</u> off aws. i own on-call for the core and we&apos;ve
+          held <u>99.9% availability</u> while the platform has 60×&apos;d.
+        </p>
+
+        <h3 class="subhead subhead--d">the tools i built on the side</h3>
+        <p class="prose">
+          <b>vishwakarma</b> (p. 70) &mdash; autonomous sre agent. 16 parallel
+          investigations per alert, an rca pdf in slack before you&apos;ve finished
+          your tea. 70% less investigation time.<br/>
+          <b>ART</b> &mdash; automated regression testing by replaying real
+          production traffic. no more <q>it worked in staging</q>.
+        </p>
+      </div>
+
+      <aside class="ny-chart">
+        <span class="chart-cap">rides/day · bengaluru &amp; more</span>
+        <!-- hand-drawn growth sparkline, roughly -->
+        <svg viewBox="0 0 380 160" width="100%" height="160" aria-hidden="true">
+          <!-- axis, intentionally wobbly -->
+          <path d="M 20 140 L 370 140" fill="none" stroke="#1b2a4e" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M 20 140 L 20 14" fill="none" stroke="#1b2a4e" stroke-width="1.4" stroke-linecap="round"/>
+          <!-- tick marks -->
+          <path d="M 60 138 l 0 6" stroke="#1b2a4e" stroke-width="1.2"/>
+          <path d="M 130 138 l 0 6" stroke="#1b2a4e" stroke-width="1.2"/>
+          <path d="M 210 138 l 0 6" stroke="#1b2a4e" stroke-width="1.2"/>
+          <path d="M 290 138 l 0 6" stroke="#1b2a4e" stroke-width="1.2"/>
+          <path d="M 360 138 l 0 6" stroke="#1b2a4e" stroke-width="1.2"/>
+          <!-- the rough growth curve -->
+          <path class="chart-curve"
+                d="M 22 135 C 60 133, 100 130, 130 125 S 200 108, 235 82 S 290 35, 365 18"
+                fill="none" stroke="#1b2a4e" stroke-width="2.2" stroke-linecap="round"/>
+          <!-- data points -->
+          <circle cx="22" cy="135" r="3.2" fill="#1b2a4e"/>
+          <circle cx="130" cy="125" r="3.2" fill="#1b2a4e"/>
+          <circle cx="235" cy="82" r="3.2" fill="#c0392b"/>
+          <circle cx="365" cy="18" r="3.6" fill="#c0392b"/>
+          <!-- annotations -->
+          <text x="28" y="125" font-family="Caveat, cursive" font-size="15" fill="#1b2a4e">5k · i joined</text>
+          <text x="118" y="115" font-family="Caveat, cursive" font-size="15" fill="#1b2a4e">50k</text>
+          <text x="218" y="72" font-family="Caveat, cursive" font-size="15" fill="#c0392b">200k — kv paying off</text>
+          <text x="260" y="14" font-family="Caveat, cursive" font-size="16" fill="#c0392b">today · 300k+</text>
+          <!-- x labels -->
+          <text x="45" y="156" font-family="Caveat, cursive" font-size="13" fill="#1b2a4e">&apos;22</text>
+          <text x="120" y="156" font-family="Caveat, cursive" font-size="13" fill="#1b2a4e">&apos;23</text>
+          <text x="200" y="156" font-family="Caveat, cursive" font-size="13" fill="#1b2a4e">&apos;24</text>
+          <text x="280" y="156" font-family="Caveat, cursive" font-size="13" fill="#1b2a4e">&apos;25</text>
+          <text x="345" y="156" font-family="Caveat, cursive" font-size="13" fill="#1b2a4e">&apos;26</text>
+        </svg>
+        <span class="chart-note">* the jump in &apos;24 is mostly the kv rewrite<br/>carrying us through the holiday traffic.</span>
+      </aside>
+
+      <aside class="postit postit--pink postit--ny">
+        <p>
+          <b>the shape of it</b><br/>
+          60&times; growth, same team.<br/>
+          most of the big wins were<br/>
+          boring: zone-aware routing,<br/>
+          table-level sharding, killing<br/>
+          blocking i/o on hot paths.
+        </p>
+      </aside>
+
+      <div class="tape-strip tape-strip--ny" aria-hidden="true"></div>
+    </div>
+  </section>
+
+
+  <!-- ─────────────────  04 · JUSPAY  ───────────────── -->
+  <section id="juspay" class="page page--ruled">
+    <div class="page-header">
+      <div class="page-header-date">entry &middot; <u>apr 2023 → mar 2024</u></div>
+      <div class="page-header-no">p. 34</div>
+    </div>
+
+    <div class="page-body page-body--juspay">
+
+      <div class="entry entry--juspay">
+        <span class="entry-stamp">entry 04 &middot; apr 2023 → mar 2024</span>
+        <h2 class="entry-title entry-title--sharpie">juspay &mdash; the kv years.</h2>
+
+        <p class="prose">
+          <b>april 2023.</b> i joined juspay as an SDE on what would become
+          namma yatri. the stack was haskell and a lot of redis. this was
+          where i got serious about types, and about treating the database
+          as a system to be designed rather than a service to be called.
+        </p>
+
+        <p class="prose">
+          two headline projects from the year.
+        </p>
+
+        <h3 class="subhead subhead--a">KV &mdash; a redis front for postgres.</h3>
+        <p class="prose">
+          we were paying too much for postgres reads on things that barely
+          needed to be strongly consistent. <b>KV</b> is a framework that keeps
+          real-time rows in redis, in a shape that looks like the table, and
+          keeps them in sync via a drainer. it took our db spend down
+          <u>40%</u> while making reads faster. later at namma yatri it would
+          scale to <u>5m+ daily transactions</u>.
+        </p>
+
+        <h3 class="subhead subhead--b">the drainer service.</h3>
+        <p class="prose">
+          originally, the drainer lived inside the app &mdash; which meant a deploy
+          of the app was also a deploy of the drainer, and a mistake in one hurt
+          the other. i split it out. cleaner flow from redis streams &rarr; db,
+          and kafka &rarr; clickhouse directly for analytics. shaped data at the
+          edge instead of at the app. deploys got a lot less scary.
+        </p>
+      </div>
+
+      <aside class="juspay-sketch">
+        <span class="chart-cap">kv, sketched on a napkin</span>
+        <!-- rough architecture sketch -->
+        <svg viewBox="0 0 340 220" width="100%" height="220" aria-hidden="true">
+          <!-- app box -->
+          <rect x="20" y="20" width="90" height="50" fill="none" stroke="#1b2a4e" stroke-width="1.8" rx="4"
+                transform="rotate(-1 65 45)"/>
+          <text x="65" y="50" text-anchor="middle" font-family="Kalam, cursive" font-size="15" fill="#1b2a4e">app</text>
+          <!-- redis box -->
+          <ellipse cx="230" cy="45" rx="60" ry="28" fill="none" stroke="#c0392b" stroke-width="1.8"/>
+          <text x="230" y="42" text-anchor="middle" font-family="Kalam, cursive" font-size="15" fill="#c0392b">redis / valkey</text>
+          <text x="230" y="58" text-anchor="middle" font-family="Caveat, cursive" font-size="12" fill="#c0392b">(hot rows)</text>
+          <!-- arrow app → redis -->
+          <path d="M 110 40 C 150 20, 180 20, 170 40" fill="none" stroke="#1b2a4e" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M 168 36 l 4 6 l -8 -1 z" fill="#1b2a4e"/>
+          <text x="140" y="14" font-family="Caveat, cursive" font-size="12" fill="#1b2a4e">reads</text>
+          <!-- drainer -->
+          <rect x="130" y="100" width="90" height="40" fill="none" stroke="#1b2a4e" stroke-width="1.8" rx="4"
+                transform="rotate(1 175 120)"/>
+          <text x="175" y="125" text-anchor="middle" font-family="Kalam, cursive" font-size="14" fill="#1b2a4e">drainer</text>
+          <!-- redis → drainer -->
+          <path d="M 220 70 Q 210 100, 200 100" fill="none" stroke="#c0392b" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M 202 96 l 0 8 l -6 -5 z" fill="#c0392b"/>
+          <!-- drainer → pg -->
+          <path d="M 170 140 L 100 190" fill="none" stroke="#1b2a4e" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M 104 184 l -8 8 l 10 -1 z" fill="#1b2a4e"/>
+          <!-- pg box -->
+          <rect x="30" y="170" width="90" height="40" fill="none" stroke="#1b2a4e" stroke-width="1.8" rx="4"
+                transform="rotate(-0.5 75 190)"/>
+          <text x="75" y="195" text-anchor="middle" font-family="Kalam, cursive" font-size="14" fill="#1b2a4e">postgres</text>
+          <!-- drainer → clickhouse -->
+          <path d="M 220 140 L 290 190" fill="none" stroke="#c0392b" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 3"/>
+          <path d="M 286 184 l 10 5 l -4 -9 z" fill="#c0392b"/>
+          <rect x="245" y="170" width="75" height="40" fill="none" stroke="#c0392b" stroke-width="1.8" rx="4"
+                transform="rotate(0.5 282 190)"/>
+          <text x="282" y="195" text-anchor="middle" font-family="Kalam, cursive" font-size="13" fill="#c0392b">clickhouse</text>
+          <!-- note -->
+          <text x="235" y="160" font-family="Caveat, cursive" font-size="12" fill="#c0392b">analytics &rarr;</text>
+        </svg>
+      </aside>
+
+      <aside class="postit postit--yellow postit--juspay">
+        <p>
+          <b>also shipped, quietly</b><br/>
+          <u>hpa</u> + pod-request tuning<br/>
+          on the testing sandbox.<br/>
+          the testing bill got a lot<br/>
+          smaller. nobody celebrated.
+        </p>
+      </aside>
+
+    </div>
+  </section>
+
+
+  <!-- ─────────────────  05 · VAHAN  ───────────────── -->
+  <section id="vahan" class="page page--ruled">
+    <div class="page-header">
+      <div class="page-header-date">entry &middot; <u>jun 2022 → apr 2023</u></div>
+      <div class="page-header-no">p. 56</div>
+    </div>
+
+    <div class="page-body page-body--vahan">
+
+      <div class="entry entry--vahan">
+        <span class="entry-stamp">entry 05 &middot; jun 2022 → apr 2023</span>
+        <h2 class="entry-title entry-title--sharpie">vahan &mdash; the first job.</h2>
+
+        <p class="prose">
+          <b>june 2022.</b> my first full-time role. my slice of the product was
+          the backend for an <b>ai-driven whatsapp bot</b> that matches
+          blue-collar workers to jobs at zomato, swiggy, zepto, and uber.
+          the kind of thing where every ten milliseconds you shave matters,
+          because there&apos;s a real person on the other side waiting for a
+          reply.
+        </p>
+
+        <p class="prose">
+          what i shipped:
+        </p>
+
+        <ol class="prose prose--list">
+          <li>
+            made the bot process chats <b>concurrently</b> &mdash; rabbitmq
+            fanout with per-user handlers. api response time dropped
+            <u>~45%</u>, engagement climbed <u>~35%</u>, telecalling costs
+            fell <u>~32%</u>, and we handled <u>10k+ conversations</u> on the
+            new pipeline.
+          </li>
+          <li>
+            wrote a data-warehouse integration to track application status
+            automatically &mdash; <u>~70%</u> less manual monitoring effort
+            for the ops team.
+          </li>
+          <li>
+            helped build the backend for an ai matching flow that quietly
+            served <u>100,000+ job seekers</u>.
+          </li>
+        </ol>
+
+        <p class="prose">
+          good year. i learned how a real product hits a real load, and how
+          different that is from a course assignment where nobody&apos;s waiting.
+        </p>
+      </div>
+
+      <aside class="postit postit--blue postit--vahan">
+        <p>
+          <b>what vahan taught me</b><br/>
+          · concurrency matters at scale<br/>
+          · rabbit is great until it<br/>
+          &nbsp;&nbsp;isn&apos;t &mdash; watch the queues<br/>
+          · monitoring saves weekends<br/>
+          · real users are the world&apos;s<br/>
+          &nbsp;&nbsp;most honest test suite
+        </p>
+      </aside>
+
+      <div class="highlight-note highlight-note--vahan">
+        <span>good code is half the job. the other half is knowing your users are waiting.</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ─────────────────  06 · BUILDS  ───────────────── -->
+  <section id="builds" class="page page--scrapbook">
+    <div class="page-header">
+      <div class="page-header-date">entry &middot; <u>weekends &amp; evenings</u></div>
+      <div class="page-header-no">p. 70</div>
+    </div>
+
+    <div class="page-body page-body--builds">
+
+      <div class="entry entry--builds">
+        <span class="entry-stamp">entry 06</span>
+        <h2 class="entry-title entry-title--sharpie">things i made on weekends.</h2>
+        <p class="prose prose--tight">
+          work is one thing. the best way i know to actually learn something is
+          to make a small, slightly embarrassing version of it on a sunday. pinned
+          below: the ones i&apos;d actually show someone.
+        </p>
+      </div>
+
+      <!-- scrapbook: rotated polaroids, each = a build -->
+      <article class="build-card build-card--vish" style="--rot:-2deg">
+        <div class="build-clip" aria-hidden="true"></div>
+        <div class="build-sticker">featured</div>
+        <svg class="build-art" viewBox="0 0 200 120" aria-hidden="true">
+          <!-- vishwakarma: central node with 16 spokes -->
+          <g stroke="#1b2a4e" stroke-width="1.4" fill="none" stroke-linecap="round">
+            <circle cx="100" cy="60" r="16"/>
+          </g>
+          <text x="100" y="64" text-anchor="middle" font-family="Kalam, cursive" font-size="11" fill="#1b2a4e">VG</text>
+          <g stroke="#c0392b" stroke-width="1" fill="none" stroke-linecap="round">
+            <line x1="100" y1="44" x2="100" y2="14"/>
+            <line x1="116" y1="60" x2="150" y2="60"/>
+            <line x1="100" y1="76" x2="100" y2="106"/>
+            <line x1="84" y1="60" x2="50" y2="60"/>
+            <line x1="112" y1="48" x2="140" y2="24"/>
+            <line x1="112" y1="72" x2="140" y2="96"/>
+            <line x1="88" y1="72" x2="60" y2="96"/>
+            <line x1="88" y1="48" x2="60" y2="24"/>
+          </g>
+          <g fill="#c0392b">
+            <circle cx="100" cy="14" r="3"/>
+            <circle cx="150" cy="60" r="3"/>
+            <circle cx="100" cy="106" r="3"/>
+            <circle cx="50" cy="60" r="3"/>
+            <circle cx="140" cy="24" r="3"/>
+            <circle cx="140" cy="96" r="3"/>
+            <circle cx="60" cy="96" r="3"/>
+            <circle cx="60" cy="24" r="3"/>
+          </g>
+          <text x="100" y="118" text-anchor="middle" font-family="Caveat, cursive" font-size="13" fill="#1b2a4e">16 parallel investigations</text>
+        </svg>
+        <h3 class="build-name">vishwakarma</h3>
+        <p class="build-desc">
+          autonomous sre agent. you page, it investigates, it drops a full rca
+          pdf in slack. fans out across prom · k8s · es · dbs.
+          <b>↓70%</b> investigation time.
+        </p>
+        <a class="build-link" href="https://github.com/vijaygupta18/Vishwakarma" target="_blank" rel="noopener">github ↗</a>
+      </article>
+
+      <article class="build-card build-card--sds" style="--rot:1.6deg">
+        <div class="build-clip" aria-hidden="true"></div>
+        <svg class="build-art" viewBox="0 0 200 120" aria-hidden="true">
+          <!-- nodes + wires = system design feel -->
+          <rect x="15" y="45" width="36" height="30" fill="none" stroke="#1b2a4e" stroke-width="1.4" rx="3"/>
+          <rect x="75" y="20" width="36" height="30" fill="none" stroke="#1b2a4e" stroke-width="1.4" rx="3"/>
+          <rect x="75" y="70" width="36" height="30" fill="none" stroke="#1b2a4e" stroke-width="1.4" rx="3"/>
+          <rect x="140" y="45" width="36" height="30" fill="none" stroke="#c0392b" stroke-width="1.6" rx="3"/>
+          <path d="M 51 60 L 75 35 M 51 60 L 75 85 M 111 35 L 140 55 M 111 85 L 140 65" fill="none" stroke="#1b2a4e" stroke-width="1.2" stroke-linecap="round"/>
+          <text x="33" y="64" text-anchor="middle" font-family="Kalam, cursive" font-size="10" fill="#1b2a4e">lb</text>
+          <text x="93" y="38" text-anchor="middle" font-family="Kalam, cursive" font-size="10" fill="#1b2a4e">api</text>
+          <text x="93" y="88" text-anchor="middle" font-family="Kalam, cursive" font-size="10" fill="#1b2a4e">api</text>
+          <text x="158" y="64" text-anchor="middle" font-family="Kalam, cursive" font-size="10" fill="#c0392b">db</text>
+        </svg>
+        <h3 class="build-name">system design simulator <span class="build-star">★ 174</span></h3>
+        <p class="build-desc">
+          drag-and-drop interview practice. 30 components with real benchmarks
+          (lb: 1m qps, cache: 100k qps), 35 design problems, traffic sim with
+          bottleneck detection.
+        </p>
+        <a class="build-link" href="https://github.com/vijaygupta18/system-design-simulator" target="_blank" rel="noopener">github ↗</a>
+      </article>
+
+      <article class="build-card build-card--ai" style="--rot:-1deg">
+        <div class="build-clip" aria-hidden="true"></div>
+        <svg class="build-art" viewBox="0 0 200 120" aria-hidden="true">
+          <!-- mic + waveform -->
+          <rect x="88" y="22" width="24" height="40" rx="12" fill="none" stroke="#1b2a4e" stroke-width="1.6"/>
+          <path d="M 78 56 Q 100 82, 122 56" fill="none" stroke="#1b2a4e" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="100" y1="74" x2="100" y2="90" stroke="#1b2a4e" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="85" y1="90" x2="115" y2="90" stroke="#1b2a4e" stroke-width="1.6" stroke-linecap="round"/>
+          <g stroke="#c0392b" stroke-width="1.4" stroke-linecap="round">
+            <line x1="30" y1="60" x2="30" y2="68"/>
+            <line x1="40" y1="52" x2="40" y2="76"/>
+            <line x1="50" y1="58" x2="50" y2="70"/>
+            <line x1="60" y1="46" x2="60" y2="82"/>
+            <line x1="70" y1="54" x2="70" y2="74"/>
+            <line x1="130" y1="54" x2="130" y2="74"/>
+            <line x1="140" y1="46" x2="140" y2="82"/>
+            <line x1="150" y1="58" x2="150" y2="70"/>
+            <line x1="160" y1="52" x2="160" y2="76"/>
+            <line x1="170" y1="60" x2="170" y2="68"/>
+          </g>
+        </svg>
+        <h3 class="build-name">ai interview platform</h3>
+        <p class="build-desc">
+          voice + video interview flow w/ deepgram stt/tts, real-time proctoring,
+          auto-scoring. multi-tenant, works with any openai-compatible api.
+        </p>
+        <a class="build-link" href="https://github.com/vijaygupta18/ai-interview-platform" target="_blank" rel="noopener">github ↗</a>
+      </article>
+
+      <article class="build-card build-card--mcm" style="--rot:2.1deg">
+        <div class="build-clip" aria-hidden="true"></div>
+        <svg class="build-art" viewBox="0 0 200 120" aria-hidden="true">
+          <!-- two clouds, one query -->
+          <path d="M 30 50 q 0 -20 20 -20 q 5 -10 20 -10 q 15 0 20 10 q 15 0 15 15 q 0 15 -20 15 l -40 0 q -15 0 -15 -10 z"
+                fill="none" stroke="#1b2a4e" stroke-width="1.6"/>
+          <text x="70" y="50" text-anchor="middle" font-family="Kalam, cursive" font-size="12" fill="#1b2a4e">aws</text>
+          <path d="M 110 80 q 0 -20 20 -20 q 5 -10 20 -10 q 15 0 20 10 q 15 0 15 15 q 0 15 -20 15 l -40 0 q -15 0 -15 -10 z"
+                fill="none" stroke="#c0392b" stroke-width="1.6"/>
+          <text x="150" y="80" text-anchor="middle" font-family="Kalam, cursive" font-size="12" fill="#c0392b">gcp</text>
+          <path d="M 50 60 Q 100 100, 150 90" fill="none" stroke="#1b2a4e" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="3 3"/>
+        </svg>
+        <h3 class="build-name">multi-cloud db manager</h3>
+        <p class="build-desc">
+          one pane to query pg &amp; redis across aws and gcp at the same time.
+          parallel execution, side-by-side diff, 3-tier rbac, monaco editor,
+          password-gated destructive ops.
+        </p>
+        <a class="build-link" href="https://github.com/vijaygupta18/Multi-Cloud-DB-Manager" target="_blank" rel="noopener">github ↗</a>
+      </article>
+
+      <article class="build-card build-card--argus" style="--rot:-1.6deg">
+        <div class="build-clip" aria-hidden="true"></div>
+        <svg class="build-art" viewBox="0 0 200 120" aria-hidden="true">
+          <!-- slack channel doodle -->
+          <rect x="25" y="20" width="150" height="80" rx="8" fill="none" stroke="#1b2a4e" stroke-width="1.4"/>
+          <circle cx="42" cy="38" r="5" fill="#c0392b"/>
+          <line x1="55" y1="38" x2="150" y2="38" stroke="#1b2a4e" stroke-width="1.2"/>
+          <circle cx="42" cy="58" r="5" fill="#1b2a4e"/>
+          <line x1="55" y1="58" x2="120" y2="58" stroke="#1b2a4e" stroke-width="1.2"/>
+          <circle cx="42" cy="78" r="5" fill="#c0392b"/>
+          <line x1="55" y1="78" x2="140" y2="78" stroke="#1b2a4e" stroke-width="1.2"/>
+          <text x="100" y="14" text-anchor="middle" font-family="Caveat, cursive" font-size="13" fill="#c0392b">@argus</text>
+        </svg>
+        <h3 class="build-name">argus</h3>
+        <p class="build-desc">
+          slack-native incident platform. mention @argus, it triages, pulls on-call
+          by availability, streams llm-powered rca into a dashboard. rbac + audit
+          trail + stale-ticket nags.
+        </p>
+        <a class="build-link" href="https://github.com/vijaygupta18/argus" target="_blank" rel="noopener">github ↗</a>
+      </article>
+
+      <article class="build-card build-card--nodesage" style="--rot:1deg">
+        <div class="build-clip" aria-hidden="true"></div>
+        <svg class="build-art" viewBox="0 0 200 120" aria-hidden="true">
+          <!-- terminal prompt -->
+          <rect x="20" y="25" width="160" height="70" rx="6" fill="none" stroke="#1b2a4e" stroke-width="1.4"/>
+          <text x="30" y="55" font-family="Special Elite, monospace" font-size="13" fill="#1b2a4e">$ sage ask &quot;what&apos;s the&quot;</text>
+          <text x="30" y="75" font-family="Special Elite, monospace" font-size="13" fill="#c0392b">&gt; runs locally via ollama</text>
+        </svg>
+        <h3 class="build-name">nodesage</h3>
+        <p class="build-desc">
+          cli: query any codebase with local llms (ollama) + rag. ask a repo
+          anything, nothing leaves your machine. good for when you&apos;re new to
+          a monorepo and embarrassed to ask a human.
+        </p>
+        <a class="build-link" href="https://github.com/vijaygupta18/NodeSage" target="_blank" rel="noopener">github ↗</a>
+      </article>
+
+      <article class="build-card build-card--k8s" style="--rot:-0.6deg">
+        <div class="build-clip" aria-hidden="true"></div>
+        <svg class="build-art" viewBox="0 0 200 120" aria-hidden="true">
+          <!-- bar chart -->
+          <line x1="20" y1="100" x2="180" y2="100" stroke="#1b2a4e" stroke-width="1.4"/>
+          <rect x="35" y="60" width="18" height="40" fill="none" stroke="#1b2a4e" stroke-width="1.4"/>
+          <rect x="65" y="40" width="18" height="60" fill="none" stroke="#1b2a4e" stroke-width="1.4"/>
+          <rect x="95" y="70" width="18" height="30" fill="none" stroke="#c0392b" stroke-width="1.6"/>
+          <rect x="125" y="30" width="18" height="70" fill="none" stroke="#1b2a4e" stroke-width="1.4"/>
+          <rect x="155" y="55" width="18" height="45" fill="none" stroke="#1b2a4e" stroke-width="1.4"/>
+        </svg>
+        <h3 class="build-name">k8s-dashboard</h3>
+        <p class="build-desc">
+          real-time k8s cluster monitor &mdash; pod health, resources, events viewer.
+          fastapi + react, deploys on a single pod.
+        </p>
+        <a class="build-link" href="https://github.com/vijaygupta18/k8s-dashboard" target="_blank" rel="noopener">github ↗</a>
+      </article>
+
+      <article class="build-card build-card--bus" style="--rot:1.8deg">
+        <div class="build-clip" aria-hidden="true"></div>
+        <svg class="build-art" viewBox="0 0 200 120" aria-hidden="true">
+          <!-- bus doodle -->
+          <rect x="30" y="40" width="140" height="45" rx="6" fill="none" stroke="#1b2a4e" stroke-width="1.6"/>
+          <circle cx="60" cy="92" r="8" fill="none" stroke="#1b2a4e" stroke-width="1.4"/>
+          <circle cx="140" cy="92" r="8" fill="none" stroke="#1b2a4e" stroke-width="1.4"/>
+          <rect x="45" y="50" width="20" height="15" fill="none" stroke="#c0392b" stroke-width="1.2"/>
+          <rect x="75" y="50" width="20" height="15" fill="none" stroke="#c0392b" stroke-width="1.2"/>
+          <rect x="105" y="50" width="20" height="15" fill="none" stroke="#c0392b" stroke-width="1.2"/>
+          <rect x="135" y="50" width="20" height="15" fill="none" stroke="#c0392b" stroke-width="1.2"/>
+        </svg>
+        <h3 class="build-name">bus route tracker</h3>
+        <p class="build-desc">
+          open-source, @nammayatri. crowd-sources bus-stop &amp; route data
+          with real-time gps and an admin api for corrections.
+        </p>
+        <a class="build-link" href="https://github.com/nammayatri/bus-route-tracker" target="_blank" rel="noopener">github ↗</a>
+      </article>
+
+      <div class="builds-tape" aria-hidden="true"></div>
+    </div>
+  </section>
+
+
+  <!-- ─────────────────  07 · TOOLBOX  ───────────────── -->
+  <section id="toolbox" class="page page--dot">
+    <div class="page-header">
+      <div class="page-header-date">entry &middot; <u>the whole shelf</u></div>
+      <div class="page-header-no">p. 102</div>
+    </div>
+
+    <div class="page-body page-body--toolbox">
+
+      <div class="entry entry--toolbox">
+        <span class="entry-stamp">entry 07</span>
+        <h2 class="entry-title entry-title--sharpie">what&apos;s in my toolbox.</h2>
+        <p class="prose prose--tight">
+          mind-mapped first. then listed properly below, because the chip-grid
+          version is honest. <b>★</b> = deepest experience. <b>·</b> = shipped with,
+          happy to pick up again. <b>~</b> = around the edges but familiar.
+        </p>
+      </div>
+
+      <!-- hand-drawn mind map (the vibe) -->
+      <div class="toolbox-map">
+        <svg viewBox="0 0 900 520" aria-hidden="true">
+          <!-- root -->
+          <ellipse cx="450" cy="260" rx="80" ry="36" fill="none" stroke="#142044" stroke-width="2"/>
+          <text x="450" y="258" text-anchor="middle" font-family="Kalam, cursive" font-size="22" fill="#142044">vijay</text>
+          <text x="450" y="278" text-anchor="middle" font-family="Caveat, cursive" font-size="14" fill="#142044">(the engineer)</text>
+
+          <!-- languages branch -->
+          <path d="M 450 224 C 430 160, 300 140, 180 120" fill="none" stroke="#142044" stroke-width="1.6" stroke-linecap="round"/>
+          <text x="140" y="112" font-family="Kalam, cursive" font-size="18" fill="#142044">languages</text>
+          <text x="40" y="140" font-family="Caveat, cursive" font-size="16" fill="#a83225">★ haskell</text>
+          <text x="40" y="160" font-family="Caveat, cursive" font-size="16" fill="#a83225">★ python</text>
+          <text x="130" y="140" font-family="Caveat, cursive" font-size="16" fill="#142044">typescript</text>
+          <text x="130" y="160" font-family="Caveat, cursive" font-size="16" fill="#142044">javascript</text>
+          <text x="40" y="180" font-family="Caveat, cursive" font-size="16" fill="#142044">purescript</text>
+          <text x="130" y="180" font-family="Caveat, cursive" font-size="16" fill="#142044">c++ · java · c</text>
+          <text x="40" y="200" font-family="Caveat, cursive" font-size="16" fill="#142044">sql · html · css</text>
+
+          <!-- data branch -->
+          <path d="M 515 230 C 620 180, 740 120, 820 100" fill="none" stroke="#142044" stroke-width="1.6" stroke-linecap="round"/>
+          <text x="740" y="90" font-family="Kalam, cursive" font-size="18" fill="#142044">data &amp; stream</text>
+          <text x="680" y="118" font-family="Caveat, cursive" font-size="16" fill="#a83225">★ redis / valkey</text>
+          <text x="680" y="138" font-family="Caveat, cursive" font-size="16" fill="#a83225">★ kafka</text>
+          <text x="680" y="158" font-family="Caveat, cursive" font-size="16" fill="#a83225">★ postgres</text>
+          <text x="680" y="178" font-family="Caveat, cursive" font-size="16" fill="#142044">clickhouse</text>
+          <text x="680" y="198" font-family="Caveat, cursive" font-size="16" fill="#142044">rabbitmq</text>
+          <text x="680" y="218" font-family="Caveat, cursive" font-size="16" fill="#142044">mysql · mongo</text>
+
+          <!-- cloud + ops -->
+          <path d="M 515 290 C 640 360, 740 420, 820 440" fill="none" stroke="#142044" stroke-width="1.6" stroke-linecap="round"/>
+          <text x="740" y="460" font-family="Kalam, cursive" font-size="18" fill="#142044">cloud &amp; ops</text>
+          <text x="680" y="360" font-family="Caveat, cursive" font-size="16" fill="#a83225">★ aws</text>
+          <text x="680" y="380" font-family="Caveat, cursive" font-size="16" fill="#a83225">★ kubernetes</text>
+          <text x="680" y="400" font-family="Caveat, cursive" font-size="16" fill="#142044">gcp · docker</text>
+          <text x="680" y="420" font-family="Caveat, cursive" font-size="16" fill="#142044">kyverno · ci/cd</text>
+
+          <!-- observability -->
+          <path d="M 385 290 C 300 360, 200 420, 120 440" fill="none" stroke="#142044" stroke-width="1.6" stroke-linecap="round"/>
+          <text x="40" y="460" font-family="Kalam, cursive" font-size="18" fill="#142044">observability</text>
+          <text x="40" y="360" font-family="Caveat, cursive" font-size="16" fill="#a83225">★ prometheus</text>
+          <text x="40" y="380" font-family="Caveat, cursive" font-size="16" fill="#a83225">★ grafana</text>
+          <text x="40" y="400" font-family="Caveat, cursive" font-size="16" fill="#142044">victoriametrics</text>
+          <text x="40" y="420" font-family="Caveat, cursive" font-size="16" fill="#142044">cloudwatch · jenkins</text>
+
+          <!-- floating discipline pills -->
+          <g font-family="Caveat, cursive" font-size="15">
+            <text x="220" y="260" fill="#142044" transform="rotate(-8 220 260)">~ distributed systems</text>
+            <text x="565" y="260" fill="#142044" transform="rotate(6 565 260)">~ system design</text>
+            <text x="305" y="320" fill="#142044" transform="rotate(-4 305 320)">~ on-call / sre</text>
+            <text x="510" y="330" fill="#142044" transform="rotate(3 510 330)">~ perf &amp; cost</text>
+            <text x="370" y="210" fill="#142044" transform="rotate(-6 370 210)">~ feature work</text>
+            <text x="495" y="200" fill="#142044" transform="rotate(5 495 200)">~ system design</text>
+          </g>
+
+          <!-- small legend -->
+          <text x="40" y="500" font-family="Caveat, cursive" font-size="14" fill="#a83225">★ = deepest &nbsp;·&nbsp; see the inventory below ↓</text>
+        </svg>
+      </div>
+
+      <!-- the proper inventory -->
+      <section class="inventory" aria-label="Full skills inventory">
+        <header class="inventory-head">
+          <span class="inventory-head-line"></span>
+          <span class="inventory-head-text">— the whole drawer, spelled out —</span>
+          <span class="inventory-head-line"></span>
+        </header>
+
+        <div class="inv-grid">
+
+          <div class="inv-box">
+            <h4 class="inv-title">languages</h4>
+            <ul class="inv-list">
+              <li class="inv-star">haskell <em>· 3 roles, ny + juspay</em></li>
+              <li class="inv-star">python <em>· 11 endorsements</em></li>
+              <li class="inv-dot">typescript</li>
+              <li class="inv-dot">javascript <em>· linkedin-assessed</em></li>
+              <li class="inv-dot">purescript <em>· ny + juspay</em></li>
+              <li class="inv-dot">c++ <em>· linkedin-assessed</em></li>
+              <li class="inv-dot">java &middot; core java</li>
+              <li class="inv-dot">sql</li>
+              <li class="inv-tilde">c <em>· assessed</em></li>
+              <li class="inv-tilde">html5 &middot; css</li>
+            </ul>
+          </div>
+
+          <div class="inv-box">
+            <h4 class="inv-title">data &amp; stream</h4>
+            <ul class="inv-list">
+              <li class="inv-star">redis &middot; valkey <em>· 4 roles</em></li>
+              <li class="inv-star">kafka <em>· 3 roles</em></li>
+              <li class="inv-star">postgresql <em>· 3 roles</em></li>
+              <li class="inv-dot">clickhouse <em>· juspay</em></li>
+              <li class="inv-dot">rabbitmq <em>· vahan</em></li>
+              <li class="inv-dot">mysql</li>
+              <li class="inv-tilde">mongodb <em>· assessed</em></li>
+              <li class="inv-dot">databases <em>· 3 roles</em></li>
+            </ul>
+          </div>
+
+          <div class="inv-box">
+            <h4 class="inv-title">cloud &amp; infra</h4>
+            <ul class="inv-list">
+              <li class="inv-star">aws <em>· 2 roles, prod</em></li>
+              <li class="inv-star">kubernetes <em>· 3 roles</em></li>
+              <li class="inv-dot">gcp <em>· active-active w/ aws</em></li>
+              <li class="inv-dot">docker</li>
+              <li class="inv-dot">kyverno <em>· pod-zone injection</em></li>
+              <li class="inv-dot">lambda</li>
+              <li class="inv-dot">ci / cd</li>
+              <li class="inv-dot">git &middot; github</li>
+              <li class="inv-dot">automation <em>· 2 roles</em></li>
+            </ul>
+          </div>
+
+          <div class="inv-box">
+            <h4 class="inv-title">observability</h4>
+            <ul class="inv-list">
+              <li class="inv-star">prometheus</li>
+              <li class="inv-star">grafana</li>
+              <li class="inv-dot">victoriametrics</li>
+              <li class="inv-dot">cloudwatch</li>
+              <li class="inv-tilde">jenkins</li>
+            </ul>
+          </div>
+
+          <div class="inv-box">
+            <h4 class="inv-title">frameworks &amp; web</h4>
+            <ul class="inv-list">
+              <li class="inv-dot">node.js <em>· vahan</em></li>
+              <li class="inv-dot">express.js</li>
+              <li class="inv-dot">react.js <em>· vahan</em></li>
+              <li class="inv-dot">fastapi <em>· vishwakarma, argus</em></li>
+              <li class="inv-dot">rest apis <em>· vahan</em></li>
+              <li class="inv-dot">full-stack &middot; back-end</li>
+              <li class="inv-dot">web development <em>· 11 endorsements</em></li>
+              <li class="inv-tilde">bootstrap</li>
+            </ul>
+          </div>
+
+          <div class="inv-box">
+            <h4 class="inv-title">discipline</h4>
+            <ul class="inv-list">
+              <li class="inv-star">systems design</li>
+              <li class="inv-star">distributed systems</li>
+              <li class="inv-star">sre &middot; on-call ownership</li>
+              <li class="inv-star">performance &amp; cost tuning</li>
+              <li class="inv-dot">data structures <em>· endorsed, codechef</em></li>
+              <li class="inv-dot">algorithms <em>· sme @ chegg india</em></li>
+              <li class="inv-dot">oop <em>· sme @ chegg, assessed</em></li>
+              <li class="inv-dot">interview loops &amp; panels</li>
+              <li class="inv-dot">mentorship <em>· 3+ engineers</em></li>
+              <li class="inv-dot">incident rca &amp; on-call rotation</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <p class="inv-foot">
+          <b>also on the bench</b> &middot; vs code, github actions, slack
+          bots, mermaid diagrams, and more <q>i&apos;ll read the docs this
+          weekend</q> than i&apos;d like to admit.
+        </p>
+      </section>
+
+      <aside class="postit postit--yellow postit--toolbox">
+        <p>
+          <b>how i pick</b><br/>
+          · haskell for the core<br/>
+          · python for the tools<br/>
+          · redis / valkey for state<br/>
+          · kafka when it needs to<br/>
+          &nbsp;&nbsp;survive a deploy<br/>
+          · prom + grafana &mdash; always
+        </p>
+      </aside>
+    </div>
+  </section>
+
+
+  <!-- ─────────────────  08 · LETTERS  ───────────────── -->
+  <section id="letters" class="page page--ruled">
+    <div class="page-header">
+      <div class="page-header-date">clippings &middot; <u>from linkedin</u></div>
+      <div class="page-header-no">p. 118</div>
+    </div>
+
+    <div class="page-body page-body--letters">
+
+      <div class="entry entry--letters">
+        <span class="entry-stamp">entry 08</span>
+        <h2 class="entry-title entry-title--sharpie">letters people sent me.</h2>
+        <p class="prose prose--tight">
+          these are from old managers and teammates on linkedin. i&apos;ve pasted
+          them in as-is. the messy handwriting is mine; the words aren&apos;t.
+        </p>
+      </div>
+
+      <article class="letter letter--1" style="--rot:-1.4deg">
+        <div class="letter-clip" aria-hidden="true"></div>
+        <p class="letter-body">
+          Vijay was a fantastic person to work with &mdash; multi-skilled,
+          insightful, and a person with very strong problem-solving skills.
+          his focus keeps everything moving smoothly, deadlines are met, and
+          whatever project he is working on meets the highest standards.
+          an asset to any company.
+        </p>
+        <footer class="letter-foot">
+          <span class="letter-sig">&mdash; naman s.</span>
+          <span class="letter-meta">sde3 · vahan · iiit bhagalpur</span>
+        </footer>
+      </article>
+
+      <article class="letter letter--2" style="--rot:1.2deg">
+        <div class="letter-clip" aria-hidden="true"></div>
+        <p class="letter-body">
+          Vijay impressed me with his positive attitude and strong work ethic.
+          always eager to learn, with great initiative on challenging projects.
+          his technical skills are equally impressive &mdash; it was clear from
+          the beginning that he had a great deal of potential.
+        </p>
+        <footer class="letter-foot">
+          <span class="letter-sig">&mdash; ketan p.</span>
+          <span class="letter-meta">engineering manager · vahan</span>
+        </footer>
+      </article>
+
+      <article class="letter letter--3" style="--rot:-0.6deg">
+        <div class="letter-clip" aria-hidden="true"></div>
+        <p class="letter-body">
+          Vijay&apos;s technical knowledge, attention to detail, and problem-solving
+          skills are unmatched. he was always a key contributor to our team&apos;s
+          projects. i highly recommend vijay for any opportunity he pursues.
+        </p>
+        <footer class="letter-foot">
+          <span class="letter-sig">&mdash; aditya k.</span>
+          <span class="letter-meta">sse · vahan · iiit pune</span>
+        </footer>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- ─────────────────  09 · REACH  ───────────────── -->
+  <section id="reach" class="page page--ruled page--last">
+    <div class="page-header">
+      <div class="page-header-date">last page &middot; <u>apr 2026</u></div>
+      <div class="page-header-no">p. 260</div>
+    </div>
+
+    <div class="page-body page-body--reach">
+
+      <div class="entry entry--reach">
+        <span class="entry-stamp">entry 09 · the last one</span>
+        <h2 class="entry-title entry-title--sharpie">how to find me.</h2>
+
+        <p class="prose">
+          i&apos;m <b>actively interviewing</b> for senior <b>backend</b>, <b>fullstack</b>,
+          <b>ai</b>, <b>sre</b>, and <b>platform</b> roles &mdash; remote, relocation, or
+          bengaluru. if you&apos;ve got a weird distributed-systems problem, a team
+          that moves fast without lying about it, or just want to chat about
+          haskell or redis at 11&nbsp;pm, the addresses below all work.
+        </p>
+      </div>
+
+      <div class="form-card">
+        <div class="form-head">
+          <span>&middot; torn out and mailed to you &middot;</span>
+        </div>
+        <ul class="reach-list">
+          <li>
+            <span class="reach-k">email</span>
+            <a class="reach-v" href="mailto:vijayrauniyar1818@gmail.com">vijayrauniyar1818@gmail.com</a>
+          </li>
+          <li>
+            <span class="reach-k">linkedin</span>
+            <a class="reach-v" href="https://linkedin.com/in/vijaygupta18" target="_blank" rel="noopener">/in/vijaygupta18</a>
+          </li>
+          <li>
+            <span class="reach-k">github</span>
+            <a class="reach-v" href="https://github.com/vijaygupta18" target="_blank" rel="noopener">/vijaygupta18</a>
+          </li>
+          <li>
+            <span class="reach-k">twitter · x</span>
+            <a class="reach-v" href="https://twitter.com/vijaygupta18" target="_blank" rel="noopener">@vijaygupta18</a>
+          </li>
+          <li>
+            <span class="reach-k">resume</span>
+            <a class="reach-v" href="assets/resume.pdf" data-resume>open the pdf &nbsp; ↗</a>
+          </li>
+          <li>
+            <span class="reach-k">based</span>
+            <span class="reach-v">bengaluru, in &middot; happy to travel</span>
+          </li>
+        </ul>
+      </div>
+
+      <aside class="stamp-block" aria-hidden="true">
+        <div class="stamp-rect">
+          <span class="stamp-rect-top">signed</span>
+          <span class="stamp-rect-mid">v. gupta</span>
+          <span class="stamp-rect-bot">24 · 04 · 26</span>
+        </div>
+      </aside>
+
+      <p class="signoff">
+        fin. &mdash; <i>thanks for reading the whole notebook.</i>
+      </p>
+
+      <div class="back-top-wrap">
+        <a href="#cover" class="back-top">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 5 L12 19 M5 12 L12 5 L19 12" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          flip back to the cover
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- tiny affordance: footer line -->
+<footer class="tiny-foot">
+  <span>hand-made, not ai-generated. mostly caffeine.</span>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
